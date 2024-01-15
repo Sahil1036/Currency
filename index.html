@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency.com</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header
+      class="sticky top-0 z-10 flex justify-between capitalize text-5xl font-serif bg-indigo-900 text-white"
+    >
+      <div class="p-2 flex lg:px-10" id="Main_logo">
+        <i class="fa-brands fa-gg"></i> currency
+      </div>
+
+      <nav
+        class="transition-all lg:static ease-in-out duration-100 hidden lg:block lg:p-aut0 lg:bg-indigo-900 lg:h-10 w-[100%] h-52 p-6 absolute top-16 bg-indigo-800 font-mono text-3xl uppercase z-10"
+        id="navbar"
+      >
+        <ul
+          class="lg:flex-row space-x-2 flex flex-col justify-center items-center" id="menu_list"
+        >
+          <li></li>
+          <li
+            class="lg:hover:text-gray-500 hover:text-black hover:font-extrabold hover:text-4xl "
+          >
+            <a href="#">home</a>
+          </li>
+          <li
+            class="lg:hover:text-gray-500 hover:text-black hover:font-extrabold hover:text-4xl "
+          >
+            <a href="#about">about</a>
+          </li>
+          <li
+            class="lg:hover:text-gray-500 hover:text-black hover:font-extrabold hover:text-4xl "
+          >
+            <a href="#converter">convertor</a>
+          </li>
+          <li
+            class="lg:hover:text-gray-500 hover:text-black hover:font-extrabold hover:text-4xl "
+          >
+            <a href="#contact">contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="text-3xl p-4 lg:hidden transition-all ease-in duration-200"
+        id="menu_right"
+      >
+        <i class="fa-solid fa-bars" id="sign"></i>
+      </div>
+    </header>
+    <main class="font-sans" id="converter">
+      <div
+        class="p-8 w-[100%] h-[300px] bg-cover bg-bottom bg-no-repeat bg-[url('/image.jpg')] text-white flex flex-col items-center bg-fixed"
+      >
+        <h2 class="text-4xl text-center font-semibold">
+          <i class="fa-brands fa-gg"></i> Currency Converter
+        </h2>
+        <p class="text-1xl text-center">
+          Check live foreign currency exchange rates
+        </p>
+      </div>
+
+      <div 
+        class="bg-white w-4/5 font-sans text-2xl font-semibold border-2 m-auto p-3 rounded-lg capitalize -translate-y-40 shadow-gray-100 drop-shadow-lg"
+      >
+        <div class="bg-blue-500 p-1 rounded-lg">
+          <h2 class="text-4xl text-center font-semibold">
+            <i class="fa-solid fa-coins"></i>Converter
+          </h2>
+        </div>
+        <form
+          action=""
+          class="text-xl flex lg:flex-row justify-evenly items-center flex-col p-6 lg:space-x-6"
+        >
+          <div class="flex flex-col m-2.5 space-y-2">
+            <label class="lg:px-3" for="amount">amount</label>
+            <input
+              type="number"
+              id="amount"
+              class="bg-gray-50 border border-black text-gray-900 text-xl w-[100%] rounded-lg focus:ring-blue-700 focus:border-blue-500 p-2.5"
+              required
+              id="amount"
+              value="1.00"
+            />
+          </div>
+          <div class="flex my-2.5 lg:m-2.5 space-x-2 lg:flex-col">
+            <label class="lg:px-3" for="from">from</label>
+            <div class="flex space-x-2">
+              <img
+                class="w-14 border-2 border-black rounded-lg"
+                src="https://wise.com/public-resources/assets/flags/rectangle/inr.png"
+                alt="error 404..."
+                id="from_image"
+              />
+              <select
+                class="w-[100%] lg:w-[120px] bg-gray-50 border-2 border-black text-gray-900 rounded-lg p-2"
+                name="currency"
+                id="from"
+              ></select>
+            </div>
+          </div>
+          <div
+            class="w-12 bg-gray-50 border-2 border-black text-gray-900 rounded-lg p-2 lg:mt-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 17"
+              aria-hidden="true"
+              class="miscellany___StyledIconSwap-sc-1r08bla-2 ikHqUN"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M11.726 1.273l2.387 2.394H.667V5h13.446l-2.386 2.393.94.94 4-4-4-4-.94.94zM.666 12.333l4 4 .94-.94L3.22 13h13.447v-1.333H3.22l2.386-2.394-.94-.94-4 4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <div class="flex my-2.5 lg:m-2.5 lg:flex-col space-x-2">
+            <label class="lg:px-3" for="to">to </label>
+            <div class="flex space-x-2">
+              <img
+                class="w-14 border-2 border-black rounded-lg"
+                src="https://wise.com/public-resources/assets/flags/rectangle/usd.png"
+                alt="error 404..."
+                id="to_image"
+              />
+              <select
+                name="currency"
+                id="to"
+                class="w-[100%] bg-gray-50 border-2 border-black text-gray-900 rounded-lg lg:w-[120px] p-2"
+              ></select>
+            </div>
+          </div>
+        </form>
+        <div
+          id="calculate"
+          class="flex flex-wrap justify-around items-center hidden"
+        >
+          <div class="text-center">
+            <p class="font-normal"></p>
+            <p class="lg:text-5xl"></p>
+            <p class="font-extrabold text-xl"></p>
+          </div>
+          <button
+            class="border-blue-800 hover:bg-blue-400 p-2 rounded-lg text-white font-bold bg-blue-500 w-32"
+            id="reset_btn"
+          >
+            Reset
+          </button>
+        </div>
+        <div class="flex flex-wrap justify-around items-center">
+          <p class="bg-blue-200 p-1 m-1 rounded-md text-xs">
+            <i class="fa-solid fa-circle-info text-yellow-50 text-xl"></i>
+            We use the mid-market rate for our Converter. This is for
+            informational purposes only.
+            <a href="" class="text-blue-600 underline">login to view</a>
+          </p>
+
+          <button
+            class="border-blue-800 hover:bg-blue-400 p-2 rounded-lg text-white font-bold bg-blue-500 transition-all duration-100 ease-linear"
+            id="convert_btn"
+          >
+            Convert
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <h2 class="text-center text-3xl -translate-y-20 font-serif p-2">Sample weight of currency between Inr and US Dollar</h2>
+    <section
+      id="first_section"
+      class="flex flex-wrap justify-center lg:space-x-10 items-center -translate-y-16 "
+    >
+      <div
+        class="border-2 rounded-xl w-92 lg:w-4/12 text-2xl font-semibold m-2 shadow-xl"
+        id="convert_usd_to_inr"
+      >
+        <div class="rounded-t-xl bg-blue-100 p-2">
+          <h2 class="text-center text-3xl p-3 text-blue-500">Convert US Dollar to Inr</h2>
+          <div class="flex justify-evenly">
+            <div class="flex justify-evenly">
+              <img
+                class="w-10 h-8 border-2 border-black rounded-lg mx-1"
+                src="https://wise.com/public-resources/assets/flags/rectangle/usd.png"
+                alt="error 404..."
+                id="to_image"
+              />
+              <p>usd</p>
+            </div>
+            <div class="flex justify-evenly">
+              <img
+                class="w-10 h-8 border-2 border-black rounded-lg mx-1"
+                src="https://wise.com/public-resources/assets/flags/rectangle/inr.png"
+                alt="error 404..."
+                id="to_image"
+              />
+              <p>Inr</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-2 shadow-xl rounded-xl w-92 text-2xl font-semibold m-2 lg:w-4/12"
+        id="convert_inr_to_usd"
+      >
+        <div class="rounded-t-xl bg-blue-100 p-2" id="header1">
+          <h2 class="text-center text-3xl p-3 text-blue-500">Convert Inr to US Dollar</h2>
+          <div class="flex justify-evenly">
+            <div class="flex justify-evenly">
+              <img
+                class="w-10 h-8 border-2 border-black rounded-lg mx-1"
+                src="https://wise.com/public-resources/assets/flags/rectangle/inr.png"
+                alt="error 404..."
+                id="to_image"
+              />
+              <p>Inr</p>
+            </div>
+            <div class="flex justify-evenly">
+              <img
+                class="w-10 h-8 border-2 border-black rounded-lg mx-1"
+                src="https://wise.com/public-resources/assets/flags/rectangle/usd.png"
+                alt="error 404..."
+                id="to_image"
+              />
+              <p>usd</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="mt-10 w-[100%] md:p-32 bg-[url('/image.avif')] bg-center bg-fixed">
+      <div class="flex flex-col p-10 justify-center font-serif text-2xl text-white bg-black opacity-60 rounded-lg">
+        <div>
+        <h2 class="text-4xl font-extrabold">About us</h2>
+        <p class="font-bold">Welcome to <i class="fa-brands fa-gg"></i> Currency to Analysis  between different Currency</p>
+        <p class="font-medium">"Empowering Global Transactions: The Significance of Currency Converters in a Connected World"</p>
+        <p class="font-normal text-xl">A currency converter is a valuable tool that facilitates the seamless exchange of monetary values between different currencies. In today's interconnected global economy, where international trade and travel are prevalent, currency conversion plays a crucial role in ensuring smooth financial transactions. Currency converters are often available as online platforms, mobile apps, or integrated features in financial websites. Users can input the amount in one currency and swiftly obtain its equivalent value in another, based on real-time exchange rates. These tools are indispensable for businesses engaged in international trade, travelers navigating foreign countries, and individuals managing diverse financial portfolios. The convenience and accuracy offered by currency converters contribute significantly to a more efficient and transparent global financial landscape, fostering economic interactions across borders.</p></p>
+      </div>
+      </div>
+      </div>
+    </section>
+    <footer class="bg-indigo-900 text-white" id="contact" >
+      <div class="bg-indigo-900 shadow-indigo-200 shadow-sm text-white flex flex-wrap justify-evenly items-center p-14 space-x-4 space-y-4">
+      <div class="text-xl p-4 ">
+          <div class="flex space-x-2">
+            <i class="fa-solid fa-comments-dollar"></i> <p>
+              Chat with Us
+            </p>
+          </div>
+          <div class="flex space-x-2">
+            <i class="fa-solid fa-phone-volume"></i> <p>
+              +91 7353535323
+            </p>
+          </div>
+          <div class="flex space-x-2">
+            <i class="fa-solid fa-envelope"></i><p>
+              Currency@pressable.com
+            </p>
+          </div>
+      </div>
+      <div>
+        <h2 class="text-sky-400 font-bold space-x-4 flex flex-wrap">Solution</h2>
+        <p>Managed currency</p>
+        <p>Agencies</p>
+        <p>Small and Medium sized bussiness</p>
+        <p>High traffic currency</p>
+        <p>Currency rates</p>
+        <p>curwebsite</p>
+      </div>
+      <div>
+        <h2 class="text-sky-400 font-bold space-x-4 flex flex-wrap ">Company</h2>
+        <p>About us</p>
+        <p>Careers</p>
+        <p>Customer stories</p>
+        <p>contact</p>
+        <p>Legal</p>
+        <p>pressit</p>
+      </div>
+      <div>
+        <h2 class="text-sky-400 font-bold space-x-4 flex flex-wrap">Resources</h2>
+        <p> Blog</p>
+        <p>eBooks</p>
+        <p>Knowledge base</p>
+        <p>Customer reviews</p>
+        <p>Affiliate program</p>
+        <p>Strategic partners</p>
+      </div>
+      <div class="text-3xl flex lg:flex-col m-auto space-y-2 space-x-2 transition-all duration-100 ease-linear">
+        <i></i>
+        <i class="fa-brands fa-square-facebook hover:text-blue-700"></i>
+        <i class="fa-brands fa-square-whatsapp hover:text-green-700"></i>
+        <i class="fa-brands fa-square-instagram hover:text-pink-500"></i>
+        <i class="fa-brands fa-linkedin hover:text-sky-700"></i>
+        <i class="fa-brands fa-square-x-twitter hover:text-black"></i>
+      </div>
+    </div>
+    <div class=" text-white flex flex-wrap justify-between items-center px-10 py-4 text-xl font-serif">
+      <p><i class="fa-brands fa-gg"></i> Powered by Currency</p>
+      <p>This web is copyright by &copy;<i class="fa-brands fa-gg"></i> Currency 2024-25</p>
+    </div>
+    </footer>
+    <script src="/script.js" type="module"></script>
+  </body>
+</html>
